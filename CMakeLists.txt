@@ -65,16 +65,16 @@ set(BOOST_LIBS_OPTIONAL
     chrono
     container
     context
-    coroutine
+    #coroutine
     date_time
     exception
-    fiber
+    #fiber
     filesystem
     graph
     graph_parallel
     iostreams
     json
-    locale
+    #locale
     log
     math
     mpi
@@ -84,11 +84,11 @@ set(BOOST_LIBS_OPTIONAL
     regex
     serialization
     system
-    test
+    #test
     thread
     timer
     type_erasure
-    wave
+    #wave
     CACHE STRING "Boost libs to be compiled"
 )
 
