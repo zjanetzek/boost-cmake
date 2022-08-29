@@ -15,10 +15,6 @@ _add_boost_lib(
     BOOST_FILESYSTEM_STATIC_LINK=1
 )
 
-# HACK - fixed in upstream boost
-set_source_files_properties(${BOOST_SOURCE}/libs/filesystem/src/operations.cpp
-  PROPERTIES COMPILE_DEFINITIONS _POSIX_C_SOURCE=200808L)
-
 set_target_properties(Boost_filesystem PROPERTIES CXX_STANDARD_REQUIRED ON)
 get_target_property(filesystemStandardVersion Boost_filesystem CXX_STANDARD)
 if(${filesystemStandardVersion} LESS 20)

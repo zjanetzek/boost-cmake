@@ -19,7 +19,11 @@ set(BOOST_URL_SHA256 "1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9
 )
 
 include(FetchContent)
-FetchContent_Declare(Boost URL ${BOOST_URL} URL_HASH SHA256=${BOOST_URL_SHA256})
+FetchContent_Declare(Boost
+  URL ${BOOST_URL}
+  URL_HASH SHA256=${BOOST_URL_SHA256}
+  PATCH_COMMAND patch -p 0 < ${CMAKE_CURRENT_LIST_DIR}/filesystem.patch
+  )
 
 FetchContent_GetProperties(Boost)
 if(NOT Boost_POPULATED)
